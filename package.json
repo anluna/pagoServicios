@@ -1,0 +1,26 @@
+{
+  "name": "pagoservicios",
+  "version": "1.0.0",
+  "description": "evaluacion ",
+  "main": "index.js",
+  "scripts": {
+    "start": "nodemon ./index.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/anluna/restApiServic.git"
+  },
+  "author": "Anahi Luna",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/anluna/restApiServic/issues"
+  },
+  "homepage": "https://github.com/anluna/restApiServic#readme",
+  "dependencies": {
+    "express": "^4.18.1",
+    "mongoose": "^6.5.1"
+  },
+  "devDependencies": {
+    "nodemon": "^2.0.19"
+  }
+}
