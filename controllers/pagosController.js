@@ -20,3 +20,14 @@ exports.listadoPagos = async(req, res, next) =>{
     }
     res.json(pago);
 }
+
+exports.pagosPorFechas = async(req, res, next) =>{
+    const pago = await Pagos.find({ fechaPago: {$gt: req.params.fechaPago}, fechaPago: {$lt: req.params.fechaPago} });
+
+    if(!pago){
+        res.json({mensaje: 'NO EXISTEN PAGOS'});
+        return next()
+    }
+    res.json(pago);
+    
+}

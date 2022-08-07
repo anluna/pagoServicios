@@ -13,7 +13,7 @@ exports.nuevoServicio = async(req,res, next) =>{
 }
 
 exports.boletasServicio = async(req, res, next) =>{
-    const servicio = await Servicios.find({tipoServicio: req.params.tipoServicio});
+    const servicio = await Servicios.find({ $or: [{tipoServicio: req.params.tipoServicio}, {statusPago: req.params.statusPago }]});
     if(!servicio){
         res.json({mensaje : 'NO EXISTE EL SERVICIO'});
         return next()

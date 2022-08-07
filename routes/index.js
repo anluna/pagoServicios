@@ -8,11 +8,15 @@ module.exports = function (){
     router.post('/servicios', servicioController.nuevoServicio);
 
     //ENVIAR BOLETAS IMPAGAS
-    router.get('/servicios/:tipoServicio', servicioController.boletasServicio);
+    router.get('/servicios/:tipoServicio/:statusPago', servicioController.boletasServicio);
 
     router.post('/pagos', pagosController.nuevoPago);
 
     router.get('/pagos/:fechaPago', pagosController.listadoPagos);
+
+    router.get('/pagos/:fechaPago', pagosController.pagosPorFechas);
+
+  
 
     return router;
 }
