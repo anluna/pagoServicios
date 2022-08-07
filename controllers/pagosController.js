@@ -11,3 +11,12 @@ exports.nuevoPago = async(req, res, next) =>{
         next();
     }
 }
+
+exports.listadoPagos = async(req, res, next) =>{
+    const pago = await Pagos.find({fechaPago: req.params.fechaPago});
+    if(!pago){
+        res.json({mensaje : 'NO HAY PAGOS'});
+        return next()
+    }
+    res.json(pago);
+}

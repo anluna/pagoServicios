@@ -12,33 +12,12 @@ exports.nuevoServicio = async(req,res, next) =>{
     }
 }
 
-exports.mostrarServicios = async(req, res) =>{
-    try {
-        const servicio = await Servicios.find({});
-        res.json(servicio);
-    } catch (error) {
-        console.log(error);
-    }
-}
-
-exports.boletasImpagas = async(req, res, next) =>{
-    const servicio = await Servicios.find({statusPago : req.params.statusPago});
-
+exports.boletasServicio = async(req, res, next) =>{
+    const servicio = await Servicios.find({tipoServicio: req.params.tipoServicio});
     if(!servicio){
-        res.json({mensaje : 'NO HAY BOLETAS IMPAGAS'});
-        return next()
-    }
-
-    res.json(servicio);
-}
-
-exports.boletasTipoServicio = async (req, res, next) => {
-    const servicio = await Servicios.find({tipoServicio : req.params.tipoServicio});
-    if(!servicio){
-        res.json({ mensaje: 'NO EXISTE EL SEEVICIO'});
+        res.json({mensaje : 'NO EXISTE EL SERVICIO'});
         return next()
     }
     res.json(servicio);
-    
 }
 

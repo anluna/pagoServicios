@@ -1,7 +1,7 @@
 const mongoose = require('mongoose');
 const Schema = mongoose.Schema;
 
-const iformPagos = new Schema({
+const iformPagosSchema = new Schema({
     metodoPago : {
         type : String,
         trim : true
@@ -22,4 +22,6 @@ const iformPagos = new Schema({
         type: String,
         trim : true
     }
-})
+});
+
+module.exports = mongoose.model('Pagos',iformPagosSchema);

@@ -11,7 +11,11 @@ const serviciosSchema = new Schema({
     fechaVencimiento : {
         type: Date, trim : true},
     importe: { type: String, trim: true},
-    statusPago: { type: String, trim:true}
+    statusPago: { type: String, trim:true},
+    codigoBarras :{
+        type : Schema.ObjectId,
+        ref: 'Pagos'
+    }
 
 });
 
