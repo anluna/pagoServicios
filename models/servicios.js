@@ -16,7 +16,6 @@ const serviciosSchema = new Schema({
         type : Schema.ObjectId,
         ref: 'Pagos'
     }
-
 });
 
 module.exports = mongoose.model('Servicios',serviciosSchema);
