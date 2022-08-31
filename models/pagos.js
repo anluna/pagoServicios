@@ -1,6 +1,5 @@
 const mongoose = require('mongoose');
 const Schema = mongoose.Schema;
-
 const iformPagosSchema = new Schema({
     metodoPago : {
         type : String,

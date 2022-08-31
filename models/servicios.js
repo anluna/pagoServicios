@@ -17,5 +17,4 @@ const serviciosSchema = new Schema({
         ref: 'Pagos'
     }
 });
-
 module.exports = mongoose.model('Servicios',serviciosSchema);
